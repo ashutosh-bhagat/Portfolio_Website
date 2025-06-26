@@ -105,7 +105,7 @@ As a full-stack developer and pianist, I wanted to create something that truly r
 
 3. **Start development server**
    ```bash
-   npm start
+   npm run dev
    ```
 
 4. **Open in browser**
@@ -116,8 +116,35 @@ As a full-stack developer and pianist, I wanted to create something that truly r
 ### Build for Production
 
 ```bash
-# The project is ready for deployment as-is
-# No build process required for static files
+# Build the project (copies files to public/ directory)
+npm run build
+
+# Start production server
+npm start
+
+# Clean build directory
+npm run clean
+```
+
+### Deployment
+
+The project is configured for easy deployment on major hosting platforms:
+
+**Vercel** (Recommended)
+```bash
+npm run build
+# Deploy the public/ directory
+```
+
+**Netlify**
+```bash
+# Netlify will automatically run "npm run build" and serve from "public/"
+```
+
+**GitHub Pages**
+```bash
+npm run build
+# Push the public/ directory to gh-pages branch
 ```
 
 ---

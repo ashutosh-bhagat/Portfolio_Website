@@ -4,11 +4,12 @@
   "description": "A unique portfolio website combining web development and musical artistry with an interactive piano navigation system",
   "main": "index.html",
   "scripts": {
-    "start": "http-server -p 8080 -o",
-    "dev": "http-server -p 8080 -o -c-1",
-    "serve": "http-server -p 3000",
-    "build": "echo 'No build process required for static files'",
-    "deploy": "echo 'Ready for deployment on Vercel, Netlify, or GitHub Pages'"
+    "start": "http-server public -p 8080 -o",
+    "dev": "npm run build && http-server public -p 8080 -o -c-1",
+    "serve": "http-server public -p 3000",
+    "build": "node build.js",
+    "clean": "if exist public rmdir /s /q public",
+    "deploy": "npm run build"
   },
   "keywords": [
     "portfolio",
