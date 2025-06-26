@@ -1,25 +1,53 @@
 {
   "name": "ashutosh-bhagat-portfolio",
   "version": "1.0.0",
-  "description": "Interactive piano portfolio website for Ashutosh Bhagat - Tech Virtuoso with a Musical Soul",
+  "description": "A unique portfolio website combining web development and musical artistry with an interactive piano navigation system",
   "main": "index.html",
   "scripts": {
-    "dev": "npx http-server . -p 3000 -o",
-    "start": "npx http-server . -p 3000 -o",
-    "build": "echo 'No build process needed for static HTML/CSS/JS'",
-    "preview": "npx http-server . -p 4173 -o"
+    "start": "http-server -p 8080 -o",
+    "dev": "http-server -p 8080 -o -c-1",
+    "serve": "http-server -p 3000",
+    "build": "echo 'No build process required for static files'",
+    "deploy": "echo 'Ready for deployment on Vercel, Netlify, or GitHub Pages'"
   },
   "keywords": [
     "portfolio",
+    "web-development",
+    "interactive",
     "piano",
     "music",
-    "developer",
-    "interactive",
-    "web-audio"
+    "javascript",
+    "css",
+    "html",
+    "web-audio-api",
+    "responsive",
+    "modern",
+    "creative"
   ],
-  "author": "Ashutosh Bhagat",
+  "author": {
+    "name": "Ashutosh Bhagat",
+    "email": "asbh7190@gmail.com",
+    "url": "https://github.com/yourusername"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/ashutosh-bhagat-portfolio.git"
+  },
+  "homepage": "https://your-portfolio-url.vercel.app",
+  "bugs": {
+    "url": "https://github.com/yourusername/ashutosh-bhagat-portfolio/issues"
+  },
   "devDependencies": {
     "http-server": "^14.1.1"
-  }
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
 }
