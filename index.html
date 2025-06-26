@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashutosh Bhagat - Tech Virtuoso with a Musical Soul</title>
+    <meta name="description" content="Ashutosh Bhagat - Full Stack Developer & Musician. Where code meets melody, and logic dances with creativity.">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@300;400;500;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo" onclick="showPage('home')">
+                <div class="logo-text">AB</div>
+            </div>
+            
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active" data-page="home">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+                <a href="#" class="nav-link" data-page="about">
+                    <i class="fas fa-user"></i>
+                    <span>About</span>
+                </a>
+                <a href="#" class="nav-link" data-page="projects">
+                    <i class="fas fa-folder-open"></i>
+                    <span>Projects</span>
+                </a>
+                <a href="#" class="nav-link" data-page="skills">
+                    <i class="fas fa-bolt"></i>
+                    <span>Skills</span>
+                </a>
+                <a href="#" class="nav-link" data-page="blog">
+                    <i class="fas fa-book-open"></i>
+                    <span>Blog</span>
+                </a>
+                <a href="#" class="nav-link" data-page="music">
+                    <i class="fas fa-music"></i>
+                    <span>Music</span>
+                </a>
+                <a href="#" class="nav-link" data-page="contact">
+                    <i class="fas fa-envelope"></i>
+                    <span>Contact</span>
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Keyboard Shortcut Tooltip -->
+    <div id="shortcut-tooltip" class="shortcut-tooltip">
+        <div class="tooltip-content">
+            <i class="fas fa-keyboard"></i>
+            <span>Press <kbd>Shift + H</kbd> to return home from any page</span>
+        </div>
+    </div>
+
+    <!-- Floating Notes Background -->
+    <div class="floating-notes" id="floating-notes"></div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Home Page -->
+        <div id="home-page" class="page active">
+            <!-- Hero Section -->
+            <section class="hero-section">
+                <div class="hero-content">
+                    <div class="hero-title">
+                        <h1 class="main-title">Ashutosh</h1>
+                        <h1 class="main-title gradient-text">Bhagat</h1>
+                    </div>
+                    
+                    <div class="hero-subtitle">
+                        <div class="role-item">
+                            <i class="fas fa-code"></i>
+                            <span>Developer</span>
+                        </div>
+                        <div class="heart-icon">
+                            <i class="fas fa-heart"></i>
+                        </div>
+                        <div class="role-item">
+                            <i class="fas fa-music"></i>
+                            <span>Musician</span>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-description">
+                        <h2>Crafting <span class="text-blue">digital symphonies</span> where <span class="text-purple">code meets melody</span></h2>
+                        <p>Full-stack developer by day, pianist by night. I create web applications that are as harmonious as they are functional.</p>
+                        
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="scrollToPiano()">
+                                <i class="fas fa-play"></i>
+                                Play the Piano
+                            </button>
+                            <button class="btn btn-secondary" onclick="showPage('projects')">
+                                View My Work
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="scroll-indicator" onclick="scrollToPiano()">
+                        <span>Scroll to explore</span>
+                        <i class="fas fa-arrow-down"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section">
+                <div class="container">
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <i class="fas fa-code text-blue"></i>
+                            <div class="stat-value text-blue">50+</div>
+                            <div class="stat-label">Projects Built</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-music text-pink"></i>
+                            <div class="stat-value text-pink">25+</div>
+                            <div class="stat-label">Songs Covered</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users text-green"></i>
+                            <div class="stat-value text-green">30+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-award text-purple"></i>
+                            <div class="stat-value text-purple">5+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Piano Section -->
+            <section id="piano-section" class="piano-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Interactive Piano</h2>
+                        <p>Each key tells a story. Play the notes to hear the music, or hold Shift and press to navigate my portfolio.</p>
+                        <div id="piano-mode-indicator" class="mode-indicator">
+                            <span>PLAY MODE - Press keys to play music</span>
+                        </div>
+                    </div>
+                    
+                    <div class="piano-container">
+                        <div class="audio-status" id="audio-status">
+                            <div class="status-dot"></div>
+                            <span>Click to Enable Audio</span>
+                        </div>
+                        
+                        <div class="piano-keyboard" id="piano-keyboard">
+                            <!-- Piano keys will be generated by JavaScript -->
+                        </div>
+                        
+                        <div class="key-mapping-guide">
+                            <h3>Keyboard Mapping Guide</h3>
+                            <div class="mapping-grid" id="mapping-grid">
+                                <!-- Mapping will be generated by JavaScript -->
+                            </div>
+                            <p class="mapping-tip">
+                                💡 <strong>Tip:</strong> Hold <kbd>Shift</kbd> and press any white key to navigate to that section
+                            </p>
+                            <p class="mapping-tip">
+                                🏠 <strong>Home:</strong> Press <kbd>Shift + H</kbd> from any page to return home
+                            </p>
+                        </div>
+                        
+                        <div class="visualizer">
+                            <div class="visualizer-bars" id="visualizer-bars">
+                                <!-- Bars will be generated by JavaScript -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <div class="container">
+                    <div class="cta-content">
+                        <h3>Ready to Create Something Amazing?</h3>
+                        <p>Whether you need a web application that sings or want to collaborate on a project that harmonizes technology and creativity, let's make beautiful music together.</p>
+                        <div class="cta-buttons">
+                            <button class="btn btn-primary" onclick="showPage('contact')">Let's Collaborate</button>
+                            <button class="btn btn-secondary" onclick="showPage('about')">Learn More About Me</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- About Page -->
+        <div id="about-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>About Me</h1>
+                    <p>Where code meets melody, and passion drives innovation</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-profile">
+                        <div class="profile-card">
+                            <div class="profile-avatar">
+                                <div class="avatar-text">AB</div>
+                            </div>
+                            <h2>Ashutosh Bhagat</h2>
+                            <div class="profile-roles">
+                                <span class="text-blue">Developer</span>
+                                <i class="fas fa-heart text-pink"></i>
+                                <span class="text-purple">Musician</span>
+                            </div>
+                            <p class="profile-quote">"Crafting digital symphonies, one line of code at a time"</p>
+                        </div>
+                    </div>
+                    
+                    <div class="about-story">
+                        <div class="story-card">
+                            <h3><i class="fas fa-code text-blue"></i> My Journey</h3>
+                            <p>I'm a passionate full-stack developer who discovered that programming and music share the same fundamental essence: creating beautiful, functional harmony from individual elements.</p>
+                            <p>My coding journey began with curiosity, but it was my love for piano that taught me the importance of practice, precision, and the magic that happens when technical skill meets creative expression.</p>
+                            <p>Today, I build applications that not only solve problems but also bring joy to users, much like how a well-played melody can brighten someone's day.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="interests-section">
+                    <h3>What Drives Me</h3>
+                    <div class="interests-grid">
+                        <div class="interest-item">
+                            <i class="fas fa-code text-blue"></i>
+                            <h4>Full Stack Development</h4>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-music text-purple"></i>
+                            <h4>Piano & Keyboards</h4>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-coffee text-green"></i>
+                            <h4>Coffee Enthusiast</h4>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-gamepad text-pink"></i>
+                            <h4>Gaming</h4>
+                        </div>
+                        <div class="interest-item">
+                            <i class="fas fa-book-open text-blue"></i>
+                            <h4>Continuous Learning</h4>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="philosophy-section">
+                    <div class="philosophy-card">
+                        <h3>My Philosophy</h3>
+                        <blockquote>
+                            "In code, as in music, every element must serve the greater composition. A single misplaced note can disrupt a symphony, just as a single bug can crash an application. But when everything comes together in harmony, the result is pure magic."
+                        </blockquote>
+                        <cite>— Ashutosh Bhagat</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Projects</h1>
+                    <p>A collection of digital symphonies where technology meets creativity</p>
+                </div>
+                
+                <div class="projects-content">
+                    <div class="featured-projects">
+                        <h2>Featured Works</h2>
+                        <div class="projects-grid featured">
+                            <div class="project-card featured">
+                                <div class="project-image">
+                                    <img src="https://images.pexels.com/photos/3783471/pexels-photo-3783471.jpeg" alt="Harmonic Code Editor">
+                                    <div class="project-category">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Music Tech</span>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Harmonic Code Editor</h3>
+                                    <p>A revolutionary code editor that converts your code structure into musical patterns, helping developers debug through audio feedback.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">TypeScript</span>
+                                        <span class="tech-tag">Web Audio API</span>
+                                        <span class="tech-tag">Monaco Editor</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <button class="btn btn-primary">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            Live Demo
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="fab fa-github"></i>
+                                            Code
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card featured">
+                                <div class="project-image">
+                                    <img src="https://images.pexels.com/photos/3184360/pexels-photo-3184360.jpeg" alt="Rhythm Task Manager">
+                                    <div class="project-category">
+                                        <i class="fas fa-code"></i>
+                                        <span>Full Stack</span>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Rhythm Task Manager</h3>
+                                    <p>A productivity app that gamifies task completion with musical rewards and pomodoro sessions synced to your favorite beats.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Next.js</span>
+                                        <span class="tech-tag">Prisma</span>
+                                        <span class="tech-tag">PostgreSQL</span>
+                                        <span class="tech-tag">Tailwind CSS</span>
+                                    </div>
+                                    <div class="project-links">
+                                        <button class="btn btn-primary">
+                                            <i class="fas fa-external-link-alt"></i>
+                                            Live Demo
+                                        </button>
+                                        <button class="btn btn-secondary">
+                                            <i class="fab fa-github"></i>
+                                            Code
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="other-projects">
+                        <h2>Other Projects</h2>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.pexels.com/photos/164743/pexels-photo-164743.jpeg" alt="Piano Learning Companion">
+                                    <div class="project-category">
+                                        <i class="fas fa-bolt"></i>
+                                        <span>Music Tech</span>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Piano Learning Companion</h3>
+                                    <p>An interactive web app that teaches piano using real-time audio recognition and provides personalized feedback.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">Vue.js</span>
+                                        <span class="tech-tag">TensorFlow.js</span>
+                                        <span class="tech-tag">Web Audio API</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.pexels.com/photos/714699/pexels-photo-714699.jpeg" alt="SynthWave Dashboard">
+                                    <div class="project-category">
+                                        <i class="fas fa-globe"></i>
+                                        <span>Web App</span>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>SynthWave Dashboard</h3>
+                                    <p>A data visualization platform with a retro-futuristic interface, featuring real-time charts with musical data sonification.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">React</span>
+                                        <span class="tech-tag">D3.js</span>
+                                        <span class="tech-tag">Node.js</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.pexels.com/photos/147641/pexels-photo-147641.jpeg" alt="Melody Mobile Studio">
+                                    <div class="project-category">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <span>Mobile</span>
+                                    </div>
+                                </div>
+                                <div class="project-content">
+                                    <h3>Melody Mobile Studio</h3>
+                                    <p>A mobile app for musicians to create, edit, and share musical compositions with cloud synchronization.</p>
+                                    <div class="tech-stack">
+                                        <span class="tech-tag">React Native</span>
+                                        <span class="tech-tag">Firebase</span>
+                                        <span class="tech-tag">Audio Processing</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="projects-cta">
+                    <div class="cta-card">
+                        <h3>Let's Create Something Amazing</h3>
+                        <p>Have a project idea that combines technology with creativity? Let's collaborate and build the next digital symphony together.</p>
+                        <button class="btn btn-primary" onclick="showPage('contact')">Start a Conversation</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Skills Page -->
+        <div id="skills-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Skills</h1>
+                    <p>My technical orchestra - instruments of creation and innovation</p>
+                </div>
+                
+                <div class="skills-content">
+                    <!-- Skill Categories Filter -->
+                    <div class="skills-filter">
+                        <button class="filter-btn active" data-category="all">All Skills</button>
+                        <button class="filter-btn" data-category="frontend">Frontend</button>
+                        <button class="filter-btn" data-category="backend">Backend</button>
+                        <button class="filter-btn" data-category="mobile">Mobile</button>
+                        <button class="filter-btn" data-category="music-tech">Music Tech</button>
+                        <button class="filter-btn" data-category="tools">Tools</button>
+                    </div>
+                    
+                    <!-- Skills Grid -->
+                    <div class="skills-grid" id="skills-grid">
+                        <!-- Skills will be generated by JavaScript -->
+                    </div>
+                    
+                    <!-- Skills Summary -->
+                    <div class="skills-summary">
+                        <div class="summary-grid">
+                            <div class="summary-item">
+                                <h3>Frontend</h3>
+                                <div class="summary-value text-blue">90%</div>
+                                <p>5 skills</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Backend</h3>
+                                <div class="summary-value text-green">82%</div>
+                                <p>5 skills</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Mobile</h3>
+                                <div class="summary-value text-purple">75%</div>
+                                <p>2 skills</p>
+                            </div>
+                            <div class="summary-item">
+                                <h3>Music Tech</h3>
+                                <div class="summary-value text-pink">83%</div>
+                                <p>4 skills</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Learning Philosophy -->
+                    <div class="philosophy-section">
+                        <div class="philosophy-card">
+                            <h3>Continuous Learning</h3>
+                            <blockquote>
+                                "Like mastering a musical instrument, becoming proficient in technology requires daily practice, patience, and the courage to play the wrong notes until you find the right melody."
+                            </blockquote>
+                            <cite>— My Learning Philosophy</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Blog Page -->
+        <div id="blog-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Blog</h1>
+                    <p>Thoughts, tutorials, and musings at the intersection of code and creativity</p>
+                </div>
+                
+                <div class="blog-content">
+                    <div class="featured-posts">
+                        <h2>Featured Articles</h2>
+                        <div class="blog-grid featured">
+                            <article class="blog-card featured">
+                                <div class="blog-image">
+                                    <img src="https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg" alt="The Symphony of Clean Code">
+                                    <div class="blog-category tech">
+                                        <i class="fas fa-code"></i>
+                                        <span>Tech</span>
+                                    </div>
+                                </div>
+                                <div class="blog-content-area">
+                                    <h3>The Symphony of Clean Code: Lessons from Classical Music</h3>
+                                    <p>How the principles of musical composition can transform the way we write and structure our code.</p>
+                                    <div class="blog-meta">
+                                        <span><i class="fas fa-calendar"></i> January 15, 2024</span>
+                                        <span><i class="fas fa-clock"></i> 8 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <article class="blog-card featured">
+                                <div class="blog-image">
+                                    <img src="https://images.pexels.com/photos/3784424/pexels-photo-3784424.jpeg" alt="Building a Web Audio API Music Visualizer">
+                                    <div class="blog-category tutorial">
+                                        <i class="fas fa-arrow-right"></i>
+                                        <span>Tutorial</span>
+                                    </div>
+                                </div>
+                                <div class="blog-content-area">
+                                    <h3>Building a Web Audio API Music Visualizer</h3>
+                                    <p>Step-by-step guide to creating stunning audio visualizations using modern web technologies.</p>
+                                    <div class="blog-meta">
+                                        <span><i class="fas fa-calendar"></i> January 10, 2024</span>
+                                        <span><i class="fas fa-clock"></i> 12 min read</span>
+                                    </div>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <div class="all-posts">
+                        <h2>All Articles</h2>
+                        <div class="blog-list">
+                            <article class="blog-item">
+                                <div class="blog-item-image">
+                                    <img src="https://images.pexels.com/photos/164743/pexels-photo-164743.jpeg" alt="From Piano Keys to Keyboard Keys">
+                                </div>
+                                <div class="blog-item-content">
+                                    <div class="blog-item-meta">
+                                        <span class="blog-category life">
+                                            <i class="fas fa-heart"></i>
+                                            Life
+                                        </span>
+                                        <span><i class="fas fa-calendar"></i> January 5, 2024</span>
+                                        <span><i class="fas fa-clock"></i> 6 min</span>
+                                    </div>
+                                    <h3>From Piano Keys to Keyboard Keys: My Developer Journey</h3>
+                                    <p>A personal reflection on how my musical background shaped my approach to programming.</p>
+                                </div>
+                            </article>
+                            
+                            <article class="blog-item">
+                                <div class="blog-item-image">
+                                    <img src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg" alt="React Hooks: Composing State Like Musical Phrases">
+                                </div>
+                                <div class="blog-item-content">
+                                    <div class="blog-item-meta">
+                                        <span class="blog-category tech">
+                                            <i class="fas fa-code"></i>
+                                            Tech
+                                        </span>
+                                        <span><i class="fas fa-calendar"></i> December 28, 2023</span>
+                                        <span><i class="fas fa-clock"></i> 10 min</span>
+                                    </div>
+                                    <h3>React Hooks: Composing State Like Musical Phrases</h3>
+                                    <p>Understanding React Hooks through the lens of musical composition and harmonic progressions.</p>
+                                </div>
+                            </article>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-signup">
+                        <div class="newsletter-card">
+                            <h3>Stay in Tune</h3>
+                            <p>Subscribe to get notified about new articles that explore the beautiful intersection of technology, music, and creative thinking.</p>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="your@email.com">
+                                <button class="btn btn-primary">Subscribe</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Music Page -->
+        <div id="music-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Music Room</h1>
+                    <p>Where melodies meet technology - Coming Soon</p>
+                </div>
+                
+                <div class="music-content">
+                    <div class="coming-soon-hero">
+                        <div class="coming-soon-card">
+                            <div class="music-icon">
+                                <i class="fas fa-music"></i>
+                            </div>
+                            <h2>Something Beautiful is Coming</h2>
+                            <p>I'm crafting a unique musical experience that combines my passion for piano with cutting-edge web technology. Get ready for interactive lessons, original compositions, and a whole new way to experience music online.</p>
+                            <div class="launch-date">
+                                <i class="fas fa-calendar"></i>
+                                <span>Expected Launch: Q1 2024</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="upcoming-features">
+                        <h2>What's Coming</h2>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <i class="fas fa-piano text-blue"></i>
+                                <h3>Interactive Piano Lessons</h3>
+                                <p>Learn piano with real-time feedback and personalized practice sessions.</p>
+                                <span class="status">In Development</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-headphones text-purple"></i>
+                                <h3>Original Compositions</h3>
+                                <p>Listen to my original piano compositions and instrumental pieces.</p>
+                                <span class="status">Recording</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fab fa-youtube text-pink"></i>
+                                <h3>Video Covers Library</h3>
+                                <p>Watch my piano covers of popular songs and classical pieces.</p>
+                                <span class="status">Coming Soon</span>
+                            </div>
+                            <div class="feature-card">
+                                <i class="fas fa-microphone text-green"></i>
+                                <h3>Live Performance Stream</h3>
+                                <p>Join live piano sessions and request your favorite songs.</p>
+                                <span class="status">Planning</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="newsletter-signup">
+                        <div class="newsletter-card">
+                            <i class="fas fa-bell text-green"></i>
+                            <h3>Be the First to Know</h3>
+                            <p>Join the waitlist to get exclusive early access to the Music Room, behind-the-scenes content, and be notified the moment we launch.</p>
+                            <div class="newsletter-form">
+                                <input type="email" placeholder="your@email.com">
+                                <button class="btn btn-primary">Notify Me</button>
+                            </div>
+                            <p class="newsletter-disclaimer">No spam, just beautiful music and tech updates. Unsubscribe anytime.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Page -->
+        <div id="contact-page" class="page">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Contact</h1>
+                    <p>Let's create something amazing together - whether it's code, music, or both</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-form-section">
+                        <div class="contact-form-card">
+                            <h2><i class="fas fa-paper-plane text-blue"></i> Send a Message</h2>
+                            <form class="contact-form" id="contact-form">
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="name">Name *</label>
+                                        <input type="text" id="name" name="name" required>
+                                        <div class="error-message" id="name-error"></div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">Email *</label>
+                                        <input type="email" id="email" name="email" required>
+                                        <div class="error-message" id="email-error"></div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="project-type">Project Type</label>
+                                    <select id="project-type" name="project-type">
+                                        <option value="general">General Inquiry</option>
+                                        <option value="web-development">Web Development</option>
+                                        <option value="music-tech">Music Technology</option>
+                                        <option value="collaboration">Collaboration</option>
+                                        <option value="consulting">Consulting</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subject">Subject *</label>
+                                    <input type="text" id="subject" name="subject" required>
+                                    <div class="error-message" id="subject-error"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="message">Message *</label>
+                                    <textarea id="message" name="message" rows="6" required></textarea>
+                                    <div class="error-message" id="message-error"></div>
+                                </div>
+                                <button type="submit" class="btn btn-primary" id="submit-btn">
+                                    <i class="fas fa-paper-plane"></i>
+                                    Send Message
+                                </button>
+                                <div class="form-status" id="form-status"></div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-info-section">
+                        <div class="contact-info-card">
+                            <h2>Get In Touch</h2>
+                            <div class="contact-methods">
+                                <a href="mailto:asbh7190@gmail.com" class="contact-method">
+                                    <div class="contact-icon text-blue">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <div class="contact-label">Email</div>
+                                        <div class="contact-value">asbh7190@gmail.com</div>
+                                    </div>
+                                </a>
+                                <a href="tel:+15551234567" class="contact-method">
+                                    <div class="contact-icon text-green">
+                                        <i class="fas fa-phone"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <div class="contact-label">Phone</div>
+                                        <div class="contact-value">+1 (555) 123-4567</div>
+                                    </div>
+                                </a>
+                                <div class="contact-method">
+                                    <div class="contact-icon text-purple">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                    </div>
+                                    <div class="contact-details">
+                                        <div class="contact-label">Location</div>
+                                        <div class="contact-value">San Francisco, CA</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links-card">
+                            <h2>Follow My Journey</h2>
+                            <div class="social-links">
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-github"></i>
+                                    <span>GitHub</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-linkedin"></i>
+                                    <span>LinkedIn</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-twitter"></i>
+                                    <span>Twitter</span>
+                                </a>
+                                <a href="#" class="social-link">
+                                    <i class="fab fa-youtube"></i>
+                                    <span>YouTube</span>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="availability-card">
+                            <div class="availability-status">
+                                <div class="status-dot available"></div>
+                                <span>AVAILABLE FOR PROJECTS</span>
+                            </div>
+                            <p>I'm currently available for freelance projects, collaborations, and consulting opportunities. Whether you need web development, music technology solutions, or creative coding projects, let's discuss how we can bring your ideas to life.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Live Status -->
+    <div class="live-status">
+        <div class="status-dot"></div>
+        <span>Live</span>
+        <span>•</span>
+        <span id="current-time"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
