@@ -1,18 +1,5 @@
 {
   "version": 2,
-  "name": "ashutosh-bhagat-portfolio",
-  "builds": [
-    {
-      "src": "*.html",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
@@ -40,10 +27,5 @@
         }
       ]
     }
-  ],
-  "functions": {},
-  "env": {},
-  "build": {
-    "env": {}
-  }
+  ]
 } 

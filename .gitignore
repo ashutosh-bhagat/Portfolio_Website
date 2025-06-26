@@ -154,3 +154,5 @@ build/
 
 # Local development
 .local/
+
+.vercel
