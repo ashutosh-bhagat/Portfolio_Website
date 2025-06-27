@@ -4,8 +4,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Build output directory
+# Build output directories
 public/
+dist/
+_static/
 
 # Runtime data
 pids

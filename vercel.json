@@ -1,17 +1,4 @@
 {
-  "version": 2,
-  "name": "ashutosh-bhagat-portfolio",
-  "builds": [
-    {
-      "src": "build.js",
-      "use": "@vercel/node"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/public/$1"
-    }
-  ],
+  "buildCommand": "npm run build",
   "outputDirectory": "public"
 }

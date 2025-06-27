@@ -11,6 +11,7 @@
     "clean": "if exist public rmdir /s /q public",
     "deploy": "npm run build"
   },
+  "distDir": "public",
   "keywords": [
     "portfolio",
     "web-development",
